@@ -1,8 +1,6 @@
 # What is Mewa SDK
 
-Mewa SDK is part of an ecosystem that empowers developers to create, submit, and monetize generative video content. 
-The goal of Mewa SDK is to build OpenGL modules to generate procedural videos and interactive webpages. 
-Earn revenue from generated renditions while reaching global audiences.
+Mewa SDK is a graphics framework that empowers developers to create OpenGL modules for generating video content. Build procedural videos and interactive webpages, then monetize your creations while reaching global audiences.
 
 
 ## Compile and run an example
