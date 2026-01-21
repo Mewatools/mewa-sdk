@@ -14,6 +14,7 @@ class MxModule
 {
 public:
     MxModule();
+    virtual ~MxModule() noexcept = default;
 
     virtual void onMousePress(int x, int y, unsigned int button) {}
 

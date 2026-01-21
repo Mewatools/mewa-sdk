@@ -7,7 +7,7 @@
 #include <QOpenGLContext>
 
 #include "qmewapluginwindow.h"
-#include MX_PLUGIN_HEADER
+#include MX_MODULE_HEADER
 
 int main(int argc, char *argv[])
 {
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     QSurfaceFormat::setDefaultFormat(fmt);
 
     QMewaPluginWindow window;
-    MX_PLUGIN_CLASS plugin;
+    MX_MODULE_CLASS plugin;
     window.setPlugin(&plugin);
 
     int windowWidth = 640;

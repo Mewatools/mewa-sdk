@@ -1,11 +1,14 @@
 # What is Mewa SDK
 
-Mewa SDK is a graphics framework that empowers developers to create OpenGL modules for generating video content. Build procedural videos and interactive webpages, then monetize your creations while reaching global audiences.
+Mewa SDK is a graphics framework that empowers developers to create OpenGL modules for generating video content. 
+Build procedural videos and interactive webpages, then monetize your creations while reaching global audiences.
 
 
-## Compile and run an example
+## Compile and run a Module
 
-The SDK supports building and running examples using either Qt Creator or CMake.
+A Module is a C++ class that extends [`MxModule`](framework/moduleinterface/mxmodule.h) and uses OpenGL ES 3.0+ to render procedurally generated video frames. Each module implements custom rendering logic via the [`renderOutput()`](framework/moduleinterface/mxmodule.h:24) method and can optionally handle user interactions (mouse/touch events) and expose configurable parameters through a control panel.
+
+The SDK supports building and running modules using either Qt Creator or CMake.
 
 ### Using Qt Creator
 
@@ -25,16 +28,16 @@ Each example has a MxModule derived class. This is the entry point of every exam
 
 To prevent code duplication, the main.cpp file is located in framework/platform/qt and shared across all examples.
 
-## Plugin Configuration
-When developing a plugin with Qt, you must configure two macros in your .pro file:
-- `MX_PLUGIN_HEADER`: Path to your module's header file (e.g., "myplugin.h")
-- `MX_PLUGIN_CLASS`: Name of your module class (e.g., MyPlugin)
+## Module Configuration
+When developing a module with Qt, you must configure two macros in your .pro file:
+- `MX_MODULE_HEADER`: Path to your module's header file (e.g., "mymodule.h")
+- `MX_MODULE_CLASS`: Name of your module class (e.g., MyModule)
 
-These macros tell the shared main.cpp which plugin class to instantiate. The simpletriangle example shows this configuration:
+These macros tell the shared main.cpp which module class to instantiate. The simpletriangle example shows this configuration:
 
 ```
-DEFINES += MX_PLUGIN_HEADER="simpletriangle.h" \
-           MX_PLUGIN_CLASS=SimpleTriangle
+DEFINES += MX_MODULE_HEADER="simpletriangle.h" \
+           MX_MODULE_CLASS=SimpleTriangle
 ```
 
 ### Notes for developers

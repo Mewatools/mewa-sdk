@@ -15,7 +15,7 @@
 #include <GL/glx.h>
 
 #include "appabstraction.h"
-#include MX_PLUGIN_HEADER
+#include MX_MODULE_HEADER
 
 #define GLX_CONTEXT_MAJOR_VERSION_ARB 0x2091
 #define GLX_CONTEXT_MINOR_VERSION_ARB 0x2092
@@ -288,7 +288,7 @@ int main(int argc, char *argv[])
     glXMakeCurrent(display, win, ctx);
 
     AppAbstraction *app = new AppAbstraction();
-    app->setModule(new MX_PLUGIN_CLASS());
+    app->setModule(new MX_MODULE_CLASS());
     app->setupGL(windowWidth, windowHeight);
 
     // time in secs

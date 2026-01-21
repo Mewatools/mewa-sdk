@@ -10,12 +10,12 @@ INCLUDEPATH += $$PWD/src
 
 ################################################################
 # Plugin configuration - modify these for your example
-# MX_PLUGIN_HEADER: Header file containing the plugin class definition
-# MX_PLUGIN_CLASS: Name of the plugin class to instantiate
+# MX_MODULE_HEADER: Header file containing the plugin class definition
+# MX_MODULE_CLASS: Name of the plugin class to instantiate
 ################################################################
 
-DEFINES += MX_PLUGIN_HEADER=\\\"starsmodule.h\\\" \
-           MX_PLUGIN_CLASS=StarsModule
+DEFINES += MX_MODULE_HEADER=\\\"starsmodule.h\\\" \
+           MX_MODULE_CLASS=StarsModule
 
 SOURCES += $$PWD/src/starsmodule.cpp \
            $$PWD/src/starsprogram.cpp

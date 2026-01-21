@@ -18,6 +18,17 @@ public:
     const MxVector2F &outputResolution() const;
     void setClearColor(float red, float green, float blue);
 
+
+    /*
+    enum class RenderResult {
+    Success,
+    InvalidState,
+    OpenGLError,
+    OutOfMemory
+};
+    void setRenderResult( RenderResult result );
+    */
+
 private:
     friend class AppAbstraction;
 

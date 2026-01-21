@@ -3,8 +3,8 @@ include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
 )
 
-add_compile_definitions(MX_PLUGIN_HEADER="starsmodule.h")
-add_compile_definitions(MX_PLUGIN_CLASS=StarsModule)
+add_compile_definitions(MX_MODULE_HEADER="starsmodule.h")
+add_compile_definitions(MX_MODULE_CLASS=StarsModule)
 
 list(APPEND SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/starsmodule.cpp
