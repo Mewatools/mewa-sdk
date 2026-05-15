@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(simpletriangle VERSION 1.0.0 LANGUAGES CXX)
+project(moduletest VERSION 1.0.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -16,36 +16,36 @@ if(NOT GLX_LIBRARY)
     message(FATAL_ERROR "GLX library not found")
 endif()
 
-include(${CMAKE_SOURCE_DIR}/src/simpletriangle.cmake)
+include(${CMAKE_SOURCE_DIR}/src/module.cmake)
 
 include(${CMAKE_SOURCE_DIR}/../../framework/framework.cmake)
 
 # Create executable with Mewa dependencies
-add_executable(simpletriangle ${SOURCES} ${HEADERS})
+add_executable(moduletest ${SOURCES} ${HEADERS})
 
 # Link libraries
-target_link_libraries(simpletriangle 
+target_link_libraries(moduletest 
     ${OPENGL_LIBRARIES}
     ${X11_LIBRARIES}
     ${GLX_LIBRARY}
 )
 
 # Include directories
-target_include_directories(simpletriangle PRIVATE
+target_include_directories(moduletest PRIVATE
     ${OPENGL_INCLUDE_DIRS}
     ${X11_INCLUDE_DIRS}
 )
 
 # Compiler definitions
-target_compile_options(simpletriangle PRIVATE )
+target_compile_options(moduletest PRIVATE )
 
 # Set output directory
-set_target_properties(simpletriangle PROPERTIES
+set_target_properties(moduletest PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
 # Installation
-install(TARGETS simpletriangle
+install(TARGETS moduletest
     RUNTIME DESTINATION bin
 )
 
